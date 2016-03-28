@@ -1,0 +1,34 @@
+(function() {
+	'use strict';
+
+	angular
+		.module('barebone.map')
+		.controller('MapController', MapController);
+
+	MapController.$inject = ['$scope', 'mapService', 'motion'];
+
+	/* @ngInject */
+	function MapController($scope, mapService, motion) {
+		var vm = angular.extend(this, {
+			origin: {
+				lat: mapService.origin.latitude,
+				lon: mapService.origin.longitude
+			},
+			zoom: mapService.zoomLevel,
+			markers: []
+		});
+
+		var markers = [];
+		for (var i = 0; i < mapService.annotations.length; i++) {
+			var annotation = mapService.annotations[i];
+			markers.push({
+				name: annotation.title,
+				lat: annotation.latitude,
+				lon: annotation.longitude
+			});
+		}
+		vm.markers = markers;
+
+		motion.expandHeader();
+	}
+})();

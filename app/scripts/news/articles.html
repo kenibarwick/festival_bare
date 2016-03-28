@@ -1,0 +1,20 @@
+<ion-view view-title="Artists">
+	<ion-content class="has-header expanded">
+		<ion-refresher
+			pulling-text="Pull to refresh..."
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+
+		<ion-list class="animate-fade-slide-in-right">
+			<ion-item
+				class="item-thumbnail-left item-text-wrap ink"
+				ng-repeat="article in vm.articles"
+				ng-click="vm.navigate(article.id)">
+				<img ng-src="{{article.thumb}}">
+				<h2>{{article.name}} - {{article.type}}</h2>
+				<p>{{article.description | limitTo: 80 }}{{article.body.length > 80 ? '...' : ''}}</p>
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+</ion-view>
