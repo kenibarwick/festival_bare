@@ -5,16 +5,17 @@
 		.module('barebone.news')
 		.controller('ArticleController', ArticleController);
 
-	ArticleController.$inject = ['$stateParams', 'newsService', 'motion'];
+	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup'];
 
 	/* @ngInject */
-	function ArticleController($stateParams, newsService, motion) {
+	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup) {
 		var vm = angular.extend(this, {
-			article: null
+			article: null,
+			favourite: favourite,
 		});
 
 		// ********************************************************************
-
+		
 		var articleId = parseInt($stateParams.articleId);
 		newsService.get(articleId)
 			.then(function(article) {
@@ -22,5 +23,18 @@
 
 				motion.expandHeader();
 			});
+
+		function favourite(article) {
+
+			console.log('wefiewifn');
+			
+			var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + $scope.device;
+
+			$ionicPopup.alert({
+			     title: 'Favourite Set!',
+			     template: message
+			});
+		}
 	}
+
 })();

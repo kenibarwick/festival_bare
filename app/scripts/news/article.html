@@ -1,10 +1,13 @@
 <ion-view view-title="Artist" >
 	<ion-content class="has-header expanded">
-		<img class="block" ng-src="{{vm.picture}}" />
 		<div class="mid-bar dark-bg z1 padding">
 			<div class="row">
-				<div class="col col-75"><h3>{{vm.name}}</h3><br>{{vm.article.type}}</div>
-				<div><button class="button button-icon button-clear ion-heart" menu-toggle="right"></button></div>
+				<div class="col col-75">
+					<img class="block" ng-src="{{vm.article.thumb}}" />
+					<h3>{{vm.article.name}}</h3><br>{{vm.article.tags}}</div>
+				<div>
+				<button ng-click="vm.favourite(vm.article)" class="button button-icon button-clear ion-heart" menu-toggle="right"></button>
+				</div>
 			</div>
 		</div>
 		<div class="content-inner">

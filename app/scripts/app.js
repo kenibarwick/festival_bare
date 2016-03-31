@@ -7,7 +7,6 @@
 angular.module('starter', [
 	'ionic',
 	'ionic-material',
-	
 	'config',
 	'barebone.elements',
 	'barebone.home',
@@ -24,7 +23,7 @@ angular.module('starter', [
 
 .value('_', window._)
 
-.run(function($ionicPlatform) {
+.controller('starter', ['$scope', '$ionicPlatform', '$cordovaDevice', function($scope, $ionicPlatform, $cordovaDevice) {
 	$ionicPlatform.ready(function() {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
@@ -36,8 +35,24 @@ angular.module('starter', [
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
+
+		 $scope.$apply(function() {
+            // sometimes binding does not work! :/
+ 
+            // getting device infor from $cordovaDevice
+            var device = $cordovaDevice.getDevice();
+ 
+            $scope.manufacturer = device.manufacturer;
+            $scope.model = device.model;
+            $scope.platform = device.platform;
+            $scope.uuid = device.uuid;
+ 
+        });
+
+		ionic.Platform.device().exitApp(); 
+
 	});
-})
+}])
 
 .config(function($ionicConfigProvider, $urlRouterProvider) {
 	$ionicConfigProvider.views.maxCache(0);

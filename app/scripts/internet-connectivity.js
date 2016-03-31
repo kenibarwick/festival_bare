@@ -50,7 +50,7 @@
 
 							// HACK: this is a temporary hack due to Android 3G related issue
 							//       described above.
-							if (navigator.connection.type.toLowerCase() == 'unknown'){
+							if (navigator.connection.type.toLowerCase() === 'unknown'){
 								return true;
 							}else {
 								return $cordovaNetwork.isOnline();
