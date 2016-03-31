@@ -31,7 +31,7 @@
 				.success(function(data, status, headers, config) {
 					// this callback will be called asynchronously
 					// when the response is available
-					result = data.result;
+					result = data;
 					deferred.resolve(result);
 				})
 				.error(function(data, status, headers, config) {

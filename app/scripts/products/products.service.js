@@ -10,7 +10,7 @@
 	/* @ngInject */
 	function productsService($q, $http) {
 		// var url = 'http://skounis.s3.amazonaws.com/mobile-apps/barebone-glossy/products.json';
-		var url = 'http://keniplex.tv:1610/products.json';
+		var url = 'http://chilled-schedule.azurewebsites.net/acts';
 		var result = [];
 
 		var service = {
@@ -27,7 +27,7 @@
 				.success(function(data, status, headers, config) {
 					// this callback will be called asynchronously
 					// when the response is available
-					result = data.result;
+					result = data;
 					callback(result);
 				})
 				.error(function(data, status, headers, config) {
