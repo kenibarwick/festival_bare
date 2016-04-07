@@ -8,7 +8,7 @@
 	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup'];
 
 	/* @ngInject */
-	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup) {
+	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, $http) {
 		var vm = angular.extend(this, {
 			article: null,
 			favourite: favourite,
@@ -26,9 +26,15 @@
 
 		function favourite(article) {
 
-			console.log('wefiewifn');
-			
-			var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + $scope.device;
+			//var userString = window.localStorage['userTest'];
+			//var user = (userString) ? JSON.parse(userString) : newUser();
+
+			var user = newUser();
+
+			user.favourites.push(article.id)
+			window.localStorage['userTest'] = JSON.stringify(user);
+
+			var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + JSON.stringify(user);
 
 			$ionicPopup.alert({
 			     title: 'Favourite Set!',
@@ -38,3 +44,28 @@
 	}
 
 })();
+
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
+
+function newUser($http) {
+
+	var userId = guid();
+	var user = { 
+		name : 'from simulator',
+		deviceId : userId, 
+		favourites : [] 
+	};
+
+	$http.post('http://chilled-schedule.azurewebsites.net/users', user);
+
+	return user;
+}

@@ -23,10 +23,12 @@ angular.module('starter', [
 
 .value('_', window._)
 
-.controller('starter', ['$scope', '$ionicPlatform', '$cordovaDevice', function($scope, $ionicPlatform, $cordovaDevice) {
+.run(function($ionicPlatform, $rootScope) {
 	$ionicPlatform.ready(function() {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
+
+		$rootScope.uuid = guid();
 
 		if (window.cordova && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -35,26 +37,20 @@ angular.module('starter', [
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
-
-		 $scope.$apply(function() {
-            // sometimes binding does not work! :/
- 
-            // getting device infor from $cordovaDevice
-            var device = $cordovaDevice.getDevice();
- 
-            $scope.manufacturer = device.manufacturer;
-            $scope.model = device.model;
-            $scope.platform = device.platform;
-            $scope.uuid = device.uuid;
- 
-        });
-
-		ionic.Platform.device().exitApp(); 
-
 	});
-}])
+})
 
 .config(function($ionicConfigProvider, $urlRouterProvider) {
 	$ionicConfigProvider.views.maxCache(0);
 	$urlRouterProvider.otherwise('/app/home');
 });
+
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
+}
