@@ -44,6 +44,12 @@ img {max-width: 100%;}
 .menu .list .item{
 	background-color: #81CBF0 !important;
 }
+
+.list .item{
+	min-height:100px
+}
+
+
 .scroll-content {
 	
 	background-image: url("../images/bg.png") !important; 
