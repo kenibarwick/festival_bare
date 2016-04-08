@@ -22,10 +22,6 @@
 			path: 'news',
 			icon: 'ion-calendar'
 		}, {
-			title: '',
-			path: 'search',
-			icon: ''
-		}, {
 			title: 'Venues',
 			path: 'venues',
 			icon: 'ion-home'

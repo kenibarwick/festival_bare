@@ -1,7 +1,7 @@
 <ion-view view-title="Search">
 	<ion-content>
 		<div class="list" >
-			<div ng-repeat="e in vm.entries" ng-if="$index%2==0" class="row animate-fade-slide-in-right">
+			<div ng-repeat="e in vm.entries" class="row animate-fade-slide-in-right">
 
 				<div class="card col home item">
 					<a class="item item-text-wrap" href="#/app/{{vm.entries[$index].path}}">
@@ -9,14 +9,6 @@
 						<h2>{{vm.entries[$index].title}}</h2>
 					</a>
 				</div>
-
-				<div class="card col home item">
-					<a class="item item-text-wrap" href="#/app/{{vm.entries[$index + 1].path}}">
-						<h1><i class="icon {{vm.entries[$index + 1].icon}}"></i></h1>
-						<h2>{{vm.entries[$index + 1].title}}</h2>
-					</a>
-				</div>
-
 			</div>
 		</div>
 
