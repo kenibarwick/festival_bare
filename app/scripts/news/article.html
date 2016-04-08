@@ -6,7 +6,7 @@
 					<img class="block" ng-src="{{vm.article.thumb}}" />
 					<h3>{{vm.article.name}}</h3><br>{{vm.article.tags}}</div>
 				<div>
-				<button ng-click="vm.favourite(vm.article)" class="button button-icon button-clear ion-heart" menu-toggle="right"></button>
+				<button ng-click="vm.favourite(vm.article)"></button>
 				</div>
 			</div>
 		</div>
@@ -15,9 +15,9 @@
 		</div>
 	</ion-content>
 	<a class="button button-fab button-fab-bottom-right button-balanced" href="share">
-		<i class="icon ion-share" style="vertical-align: middle;"></i>
+		<i class="icon ion-share" style="vertical-align: top;"></i>
 	</a>
 	<a class="button button-fab button-fab-bottom-left button-balanced" href="#" ng-click="vm.favourite(vm.article)">
-		<i class="icon ion-heart" style="vertical-align: middle;"></i>
+		<i class="icon ion-heart" style="vertical-align: bottom;"></i>
 	</a>
 </ion-view>
