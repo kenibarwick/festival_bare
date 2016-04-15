@@ -24,10 +24,12 @@
 			} else {
 				q = 'maps://maps.apple.com/?q=' + coords;
 			}
+			console.log(q);
 			$window.location.href = q;
 		}
 
 		function openExternalUrl(url) {
+			console.log(url);
 			$window.open(url, '_system', 'location=yes');
 			return false;
 		}

@@ -23,7 +23,7 @@
 			icon: 'ion-search'
 		}, {
 			title: 'Site Map',
-			path: 'map',
+			path: 'sitemap',
 			icon: 'ion-map'
 		}];
 
