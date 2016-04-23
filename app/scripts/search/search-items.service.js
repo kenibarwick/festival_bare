@@ -15,11 +15,11 @@
 			icon: 'ion-calendar'
 		}, {
 			title: 'Saturday',
-			path: 'news',
+			path: 'saturday',
 			icon: 'ion-calendar'
 		}, {
 			title: 'Sunday',
-			path: 'news',
+			path: 'sunday',
 			icon: 'ion-calendar'
 		}, {
 			title: 'Venues',
@@ -27,7 +27,7 @@
 			icon: 'ion-home'
 		}, {
 			title: 'Artists',
-			path: 'news',
+			path: 'artists',
 			icon: 'ion-person-stalker'
 		}];
 
