@@ -20,7 +20,7 @@
 		}, {
 			title: 'News',
 			path: 'news',
-			icon: 'ion-ios-paper-outline'
+			icon: 'ion-ios-paper'
 		}, {
 			title: 'Site Map',
 			path: 'sitemap',
