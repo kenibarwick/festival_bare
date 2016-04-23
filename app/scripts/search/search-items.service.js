@@ -11,7 +11,7 @@
 	function searchItems() {
 		var data = [{
 			title: 'Friday',
-			path: 'news',
+			path: 'articles',
 			icon: 'ion-calendar'
 		}, {
 			title: 'Saturday',

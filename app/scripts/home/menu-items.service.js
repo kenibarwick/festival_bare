@@ -19,7 +19,7 @@
 			icon: 'ion-music-note'
 		}, {
 			title: 'News',
-			path: 'news',
+			path: 'articles',
 			icon: 'ion-ios-paper-outline'
 		}, {
 			title: 'Site Map',
