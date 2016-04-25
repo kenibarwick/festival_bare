@@ -5,10 +5,10 @@
 		.module('barebone.news')
 		.controller('ArticleController', ArticleController);
 
-	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup'];
+	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService'];
 
 	/* @ngInject */
-	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, $http) {
+	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService) {
 		var vm = angular.extend(this, {
 			article: null,
 			favourite: favourite,
@@ -29,17 +29,16 @@
 			//var userString = window.localStorage['userTest'];
 			//var user = (userString) ? JSON.parse(userString) : newUser();
 
-			var user = newUser();
+			var user = newUser(userService);
 
-			user.favourites.push(article.id)
-			window.localStorage['userTest'] = JSON.stringify(user);
+			// user.favourites.push(article.id)
+			// window.localStorage['userTest'] = JSON.stringify(user);
+			// var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + JSON.stringify(user);
 
-			var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + JSON.stringify(user);
-
-			$ionicPopup.alert({
-			     title: 'Favourite Set!',
-			     template: message
-			});
+			// $ionicPopup.alert({
+			//      title: 'Favourite Set!',
+			//      template: message
+			// });
 		}
 	}
 
@@ -56,7 +55,7 @@ function guid() {
     s4() + '-' + s4() + s4() + s4();
 }
 
-function newUser($http) {
+function newUser(userService) {
 
 	var userId = guid();
 	var user = { 
@@ -65,7 +64,7 @@ function newUser($http) {
 		favourites : [] 
 	};
 
-	$http.post('http://chilled-schedule.azurewebsites.net/users', user);
+	userService.save(user);
 
 	return user;
 }

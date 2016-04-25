@@ -3,7 +3,8 @@
 
 	angular
 		.module('barebone.news', [
-			'ionic'
+			'ionic',
+			'restangular'
 		])
 		.config(function($stateProvider) {
 			$stateProvider
@@ -25,5 +26,7 @@
 						}
 					}
 				});
+
+    		//RestangularProvider.setBaseUrl('http://localhost:8080/api/v1');
 		});
 })();
