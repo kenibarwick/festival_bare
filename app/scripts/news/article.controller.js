@@ -31,14 +31,8 @@
 
 			var user = newUser(userService);
 
-<<<<<<< HEAD
 			// user.favourites.push(article.id)
 			// window.localStorage['userTest'] = JSON.stringify(user);
-=======
-			user.favourites.push(article.id);
-			window.localStorage['userTest'] = JSON.stringify(user);
->>>>>>> a3dd3404ba4cc7bdfc96a8e25c693d257c649df7
-
 			// var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + JSON.stringify(user);
 
 			// $ionicPopup.alert({

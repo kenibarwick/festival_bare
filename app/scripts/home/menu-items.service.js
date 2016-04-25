@@ -19,8 +19,8 @@
 			icon: 'ion-music-note'
 		}, {
 			title: 'News',
-			path: 'articles',
-			icon: 'ion-ios-paper-outline'
+			path: 'news',
+			icon: 'ion-ios-paper'
 		}, {
 			title: 'Site Map',
 			path: 'sitemap',

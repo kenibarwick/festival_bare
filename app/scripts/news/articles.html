@@ -12,8 +12,7 @@
 		<ion-list class="animate-fade-slide-in-right">
 			<ion-item
 				class="item-thumbnail-left item-text-wrap ink"
-				ng-repeat="article in vm.articles | filter:searchText"
-				ng-click="vm.navigate(article.id)">
+				ng-repeat="article in vm.articles | filter:searchText" ng-click="vm.navigate(article.id)">
 				<img ng-src="{{article.thumb}}">
 				<h2>{{article.name}} - {{article.type}}</h2>
 				<p>{{article.description | limitTo: 40}}{{article.description.length > 40 ? '...' : ''}}</p>

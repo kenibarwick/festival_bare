@@ -10,7 +10,7 @@
 	/* @ngInject */
 	function productsService($q, $http) {
 		// var url = 'http://skounis.s3.amazonaws.com/mobile-apps/barebone-glossy/products.json';
-		var url = 'http://chilled-schedule.azurewebsites.net/acts';
+		var url = 'http://chilled-schedule.azurewebsites.net/locations';
 		var result = [];
 
 		var service = {

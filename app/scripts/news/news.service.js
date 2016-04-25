@@ -9,10 +9,7 @@
 
 	/* @ngInject */
 	function newsService($http, $q) {
-		// var url = 'http://keniplex.tv:1610/news.json';
 		var url = 'http://chilled-schedule.azurewebsites.net/acts';
-		// var url = 'http://skounis.s3.amazonaws.com/mobile-apps/barebone-glossy/news.json';
-		// var url = 'http://ciafadmin.herokuapp.com/api/schedule/'
 		var result = [];
 
 		var service = {
