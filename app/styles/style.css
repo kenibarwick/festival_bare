@@ -161,3 +161,19 @@ p.categories {
 .contentHeadingIcon {
 	
 }
+
+::-webkit-input-placeholder {
+   color: Black !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: Black !important;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: Black !important;  
+}
+
+:-ms-input-placeholder {  
+   color: Black !important;  
+}

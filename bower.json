@@ -1,6 +1,6 @@
 {
-  "name": "Barebone",
-  "version": "1.10.0",
+  "name": "Chilled in a Field Festival 2016",
+  "version": "1.11.0",
   "dependencies": {
     "ionic": "~1.2.4",
     "angular-websocket": "~1.0.9",

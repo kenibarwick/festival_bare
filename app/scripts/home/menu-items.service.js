@@ -10,20 +10,20 @@
 	/* @ngInject */
 	function menuItems() {
 		var data = [{
-			title: 'Artists',
-			path: 'articles',
-			icon: 'ion-android-people'
+			title: 'Favourites',
+			path: 'favourites',
+			icon: 'ion-heart'
 		}, {
-			title: 'Venues',
-			path: 'products',
+			title: 'Whats on',
+			path: 'search',
 			icon: 'ion-music-note'
 		}, {
-			title: 'Sorted',
-			path: 'search',
-			icon: 'ion-search'
+			title: 'News',
+			path: 'articles',
+			icon: 'ion-ios-paper-outline'
 		}, {
 			title: 'Site Map',
-			path: 'map',
+			path: 'sitemap',
 			icon: 'ion-map'
 		}];
 
