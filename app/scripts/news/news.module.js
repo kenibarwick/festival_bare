@@ -6,7 +6,7 @@
 			'ionic',
 			'restangular'
 		])
-		.config(function($stateProvider) {
+		.config(function($stateProvider, RestangularProvider) {
 			$stateProvider
 				.state('app.articles', {
 					url: '/articles',
@@ -27,6 +27,6 @@
 					}
 				});
 
-    		//RestangularProvider.setBaseUrl('http://localhost:8080/api/v1');
+    		RestangularProvider.setBaseUrl('http://localhost:8080/');
 		});
 })();

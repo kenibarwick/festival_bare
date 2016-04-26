@@ -30,15 +30,15 @@
 			//var user = (userString) ? JSON.parse(userString) : newUser();
 
 			var user = newUser(userService);
-
-			// user.favourites.push(article.id)
+			user.favourites.push(article.id)
+			userService.save(user);
 			// window.localStorage['userTest'] = JSON.stringify(user);
 			// var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + JSON.stringify(user);
 
-			// $ionicPopup.alert({
-			//      title: 'Favourite Set!',
-			//      template: message
-			// });
+			$ionicPopup.alert({
+			     title: 'Favourite Set!',
+			     template: user
+			});
 		}
 	}
 
