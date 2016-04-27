@@ -17,7 +17,8 @@ angular.module('starter', [
 	'barebone.products',
 	'barebone.push',
 	'barebone.search',
-	'barebone.sitemap',	
+	'barebone.sitemap',
+	'barebone.venues',
 	'gMaps',
 	'ngCordova'
 ])

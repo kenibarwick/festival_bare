@@ -15,15 +15,15 @@
 			icon: 'ion-calendar'
 		}, {
 			title: 'Saturday',
-			path: 'saturday',
+			path: 'articles',
 			icon: 'ion-calendar'
 		}, {
 			title: 'Sunday',
-			path: 'sunday',
+			path: 'articles',
 			icon: 'ion-calendar'
 		}, {
 			title: 'Venues',
-			path: 'products',
+			path: 'venues',
 			icon: 'ion-home'
 		}, {
 			title: 'Artists',

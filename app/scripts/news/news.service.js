@@ -23,7 +23,6 @@
 		// http://stackoverflow.com/questions/17533888/s3-access-control-allow-origin-header
 		function all(){
 			var deferred = $q.defer();
-
 			$http.get(url)
 				.success(function(data, status, headers, config) {
 					// this callback will be called asynchronously
