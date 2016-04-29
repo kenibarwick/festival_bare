@@ -3,9 +3,11 @@
 
 	angular
 		.module('barebone.news', [
-			'ionic'
+			'ionic',
+			'restangular',
+			'angular-linq'
 		])
-		.config(function($stateProvider) {
+		.config(function($stateProvider, RestangularProvider) {
 			$stateProvider
 				.state('app.articles', {
 					url: '/articles',
@@ -25,5 +27,9 @@
 						}
 					}
 				});
+
+    		RestangularProvider.setBaseUrl('http://localhost:8080/');
+
+    		localStorage.removeItem('chilled_user');
 		});
 })();
