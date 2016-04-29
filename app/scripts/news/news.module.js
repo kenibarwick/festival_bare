@@ -4,7 +4,8 @@
 	angular
 		.module('barebone.news', [
 			'ionic',
-			'restangular'
+			'restangular',
+			'angular-linq'
 		])
 		.config(function($stateProvider, RestangularProvider) {
 			$stateProvider
@@ -28,5 +29,7 @@
 				});
 
     		RestangularProvider.setBaseUrl('http://localhost:8080/');
+
+    		localStorage.removeItem('chilled_user');
 		});
 })();

@@ -5,10 +5,10 @@
 		.module('barebone.news')
 		.controller('ArticleController', ArticleController);
 
-	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService'];
+	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService', '$linq'];
 
 	/* @ngInject */
-	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService) {
+	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService, $linq) {
 		var vm = angular.extend(this, {
 			article: null,
 			favourite: favourite,
@@ -26,18 +26,27 @@
 
 		function favourite(article) {
 
-			//var userString = window.localStorage['userTest'];
-			//var user = (userString) ? JSON.parse(userString) : newUser();
+			var userString = window.localStorage['chilled_user'];
+			var user = (userString) ? JSON.parse(userString) : newUser(userService);
 
-			var user = newUser(userService);
-			user.favourites.push(article.id)
+			var isSet = $linq.Enumerable().From(user.favourites).Any(function (x) {
+                         return x.id == articleId
+                     });
+
+			if (!isSet)
+			{
+				var favourite = { id : article.id, name : article.name };
+				user.favourites.push( { id : article.id, name : article.name });
+			}
+
 			userService.save(user);
-			// window.localStorage['userTest'] = JSON.stringify(user);
-			// var message = 'You will receive a notification when ' + article.name + ' is about to start on device ' + JSON.stringify(user);
+			
+			window.localStorage['chilled_user'] = JSON.stringify(user);
+			var message = 'You will receive a notification when ' + article.name + ' is about to start';
 
 			$ionicPopup.alert({
 			     title: 'Favourite Set!',
-			     template: user
+			     template: message
 			});
 		}
 	}
