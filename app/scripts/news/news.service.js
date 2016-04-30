@@ -9,7 +9,9 @@
 
 	/* @ngInject */
 	function newsService($http, $q) {
-		var url = 'http://localhost:8080/acts';
+		//var url = 'http://localhost:8080/acts';
+		var url = 'http://chilled-schedule.azurewebsites.net/acts'
+
 		var result = [];
 
 		var service = {

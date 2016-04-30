@@ -28,8 +28,10 @@
 					}
 				});
 
-    		RestangularProvider.setBaseUrl('http://localhost:8080/');
+    		//RestangularProvider.setBaseUrl('http://localhost:8080/');
 
-    		localStorage.removeItem('chilled_user');
+    		//localStorage.removeItem('chilled_user');
+
+    		RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/acts/');
 		});
 })();
