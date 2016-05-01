@@ -5,10 +5,10 @@
 		.module('barebone.news')
 		.controller('ArticlesController', ArticlesController);
 
-	ArticlesController.$inject = ['$scope', '$state', 'newsService', 'motion', '$timeout'];
+	ArticlesController.$inject = ['$scope', '$state', 'newsService', 'motion', '$timeout', '$ionicPopup', '$location', '$linq'];
 
 	/* @ngInject */
-	function ArticlesController($scope, $state, newsService, motion, $timeout) {
+	function ArticlesController($scope, $state, newsService, motion, $timeout, $ionicPopup, $location, $linq) {
 		var vm = angular.extend(this, {
 			articles: [],
 			navigate: navigate,
@@ -21,6 +21,13 @@
 			loadNews().then(function() {
 				motion.showItems();
 				motion.ink();
+
+				var path = $location.path().replace('/app/', '');
+
+				$ionicPopup.alert({
+			     title: 'Favourite Set!',
+			     template: path
+			});
 			});
 		})();
 		// ********************************************************************

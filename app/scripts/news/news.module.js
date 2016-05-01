@@ -10,13 +10,24 @@
 		.config(function($stateProvider, RestangularProvider) {
 			$stateProvider
 				.state('app.articles', {
-					url: '/articles',
+					url: '/friday',
 					views: {
 						'menuContent': {
 							templateUrl: 'scripts/news/articles.html',
 							controller: 'ArticlesController as vm'
 						}
-					}
+					},
+					'test':'friday day'
+				})
+				.state('app.saturday', {
+					url: '/saturday',
+					views: {
+						'menuContent': {
+							templateUrl: 'scripts/news/articles.html',
+							controller: 'ArticlesController as vm'
+						}
+					},
+					'test':'saturday day'
 				})
 				.state('app.article', {
 					url: '/articles/:articleId',
