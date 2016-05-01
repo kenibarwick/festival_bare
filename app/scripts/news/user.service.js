@@ -5,7 +5,7 @@
 		.module('barebone.news')
 		.factory('userService', userService);
 
-	userService.$inject = ['restangular'];
+	userService.$inject = ['Restangular'];
 
 	/* @ngInject */
 	function userService(Restangular) {
@@ -18,7 +18,7 @@
 
 		function save(user){
 
-			Restangular.Users.post(user)
+			Restangular.service('users').post(user)
 		}
 	}
 })();

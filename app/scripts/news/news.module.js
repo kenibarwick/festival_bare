@@ -4,18 +4,30 @@
 	angular
 		.module('barebone.news', [
 			'ionic',
-			'restangular'
+			'restangular',
+			'angular-linq'
 		])
-		.config(function($stateProvider) {
+		.config(function($stateProvider, RestangularProvider) {
 			$stateProvider
 				.state('app.articles', {
-					url: '/articles',
+					url: '/friday',
 					views: {
 						'menuContent': {
 							templateUrl: 'scripts/news/articles.html',
 							controller: 'ArticlesController as vm'
 						}
-					}
+					},
+					'test':'friday day'
+				})
+				.state('app.saturday', {
+					url: '/saturday',
+					views: {
+						'menuContent': {
+							templateUrl: 'scripts/news/articles.html',
+							controller: 'ArticlesController as vm'
+						}
+					},
+					'test':'saturday day'
 				})
 				.state('app.article', {
 					url: '/articles/:articleId',
@@ -27,6 +39,10 @@
 					}
 				});
 
-    		//RestangularProvider.setBaseUrl('http://localhost:8080/api/v1');
+    		//RestangularProvider.setBaseUrl('http://localhost:8080/');
+
+    		//localStorage.removeItem('chilled_user');
+
+    		RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/acts/');
 		});
 })();
