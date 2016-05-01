@@ -18,23 +18,20 @@
 		(function activate() {
 			motion.expandHeader();
 
-			loadNews().then(function() {
+			var day = $location.path().replace('/app/', '').toLowerCase();
+
+			loadNews(day).then(function() {
 				motion.showItems();
 				motion.ink();
-
-				var path = $location.path().replace('/app/', '');
-
-				$ionicPopup.alert({
-			     title: 'Favourite Set!',
-			     template: path
-			});
 			});
 		})();
 		// ********************************************************************
 
-		function loadNews() {
+		function loadNews(day) {
 			return newsService.all().then(function(data){
-				vm.articles = data;
+				vm.articles = $linq.Enumerable().From(data).Where(function (x) {
+                         return x.day.toLowerCase() == day
+                     }).ToArray();
 			});
 		}
 
