@@ -9,15 +9,14 @@
 		])
 		.config(function($stateProvider, RestangularProvider) {
 			$stateProvider
-				.state('app.articles', {
+				.state('app.friday', {
 					url: '/friday',
 					views: {
 						'menuContent': {
 							templateUrl: 'scripts/news/articles.html',
 							controller: 'ArticlesController as vm'
 						}
-					},
-					'test':'friday day'
+					}
 				})
 				.state('app.saturday', {
 					url: '/saturday',
@@ -26,8 +25,16 @@
 							templateUrl: 'scripts/news/articles.html',
 							controller: 'ArticlesController as vm'
 						}
-					},
-					'test':'saturday day'
+					}
+				})
+				.state('app.sunday', {
+					url: '/sunday',
+					views: {
+						'menuContent': {
+							templateUrl: 'scripts/news/articles.html',
+							controller: 'ArticlesController as vm'
+						}
+					}
 				})
 				.state('app.article', {
 					url: '/articles/:articleId',
@@ -43,6 +50,6 @@
 
     		//localStorage.removeItem('chilled_user');
 
-    		RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/acts/');
+    		RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/');
 		});
 })();
