@@ -51,5 +51,6 @@
     		//localStorage.removeItem('chilled_user');
 
     		RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/');
+    		RestangularProvider.setDefaultHttpFields({ timeout: 10000 })
 		});
 })();
