@@ -21,11 +21,13 @@
 							return config;
 						}
 
-						var $ionicPopup = $injector.get('$ionicPopup');
-						var alertPopup = $ionicPopup.alert({
-							title: 'Alert',
-							template: 'There is no internet connection'
-						});
+						/// popups will be annying in a field!!
+						
+						// var $ionicPopup = $injector.get('$ionicPopup');
+						// var alertPopup = $ionicPopup.alert({
+						// 	title: 'Alert',
+						// 	template: 'There is no internet connection'
+						// });
 
 						return $q.reject('No internet connection');
 					},
