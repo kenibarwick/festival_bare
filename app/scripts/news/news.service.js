@@ -5,10 +5,10 @@
 		.module('barebone.news')
 		.factory('newsService', newsService);
 
-	newsService.$inject = ['$http', '$q', 'Restangular', $ionicPopup];
+	newsService.$inject = ['$http', '$q', 'Restangular'];
 
 	/* @ngInject */
-	function newsService($http, $q, Restangular, $ionicPopup) {
+	function newsService($http, $q, Restangular) {
 		//var url = 'http://localhost:8080/acts';
 		var url = 'http://chilled-schedule.azurewebsites.net/acts'
 
@@ -29,14 +29,14 @@
 
 			Restangular.all('acts').getList()
 				.then(function (acts) {
+					window.localStorage['chilled_acts'] = JSON.stringify(acts);
 					result = acts;
 					deferred.resolve(acts);
 				}, function(response) {
-					$ionicPopup.alert({
-				     title: 'ERROR!',
-				     template: JSON.stringify(response)
-					});
-				  console.log("Error with status code", response.status);
+					var actsString = window.localStorage['chilled_acts'];
+					var acts = JSON.parse(actsString);
+					result = acts;
+					deferred.resolve(acts);
 				});
 
 
