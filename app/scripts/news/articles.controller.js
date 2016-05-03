@@ -5,7 +5,8 @@
 		.module('barebone.news')
 		.controller('ArticlesController', ArticlesController);
 
-	ArticlesController.$inject = ['$scope', '$state', 'newsService', 'motion', '$timeout', '$ionicPopup', '$location', '$linq', '$q'];
+	ArticlesController.$inject = 
+	['$scope', '$state', 'newsService', 'motion', '$timeout', '$ionicPopup', '$location', '$linq', '$q'];
 
 	/* @ngInject */
 	function ArticlesController($scope, $state, newsService, motion, $timeout, $ionicPopup, $location, $linq, $q) {
@@ -26,8 +27,10 @@
 		  
 		    var timeoutPromise = $timeout(function() {
 		      canceler.resolve(); //aborts the request when timed out
-		      console.log("Timed out");
-		    }, 10000); //we set a timeout for 10s and store the promise in order to be cancelled later if the data does not arrive within 250ms
+		      console.log('Timed out');
+		    }, 10000);
+			// we set a timeout for 10s and store the promise in order to be cancelled 
+			// later if the data does not arrive within 250ms
 
 
 			loadNews(day).then(function() {
@@ -48,7 +51,7 @@
 		function loadNews(day) {
 			return newsService.all().then(function(data){
 				vm.articles = $linq.Enumerable().From(data).Where(function (x) {
-                         return x.day.toLowerCase() == day
+                         return x.day.toLowerCase() === day;
                      }).ToArray();
 			});
 		}
