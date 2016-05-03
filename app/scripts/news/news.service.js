@@ -24,7 +24,7 @@
 		function all(){
 
 			var deferred = $q.defer();
-<<<<<<< HEAD
+
 			$http.get(url)
 				.success(function(data, status, headers, config) {
 					// this callback will be called asynchronously
@@ -37,7 +37,6 @@
 					// or server returns response with an error status.
 					console.log('ERROR (News):' + status);
 					deferred.reject(result);
-=======
 
 			Restangular.all('acts').getList()
 				.then(function (acts) {
@@ -49,7 +48,6 @@
 					var acts = JSON.parse(actsString);
 					result = acts;
 					deferred.resolve(acts);
->>>>>>> 3890f5d9d1c2224c7883770daab792f3c16796ae
 				});
 
 

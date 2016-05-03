@@ -17,13 +17,9 @@ angular.module('starter', [
 	'barebone.products',
 	'barebone.push',
 	'barebone.search',
-<<<<<<< .merge_file_a11068
-	'barebone.sitemap',
 	'barebone.venues',
-=======
 	'barebone.sitemap',	
 	'chilled.favourites',	
->>>>>>> .merge_file_a11232
 	'gMaps',
 	'ngCordova'
 ])
