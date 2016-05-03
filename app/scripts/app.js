@@ -17,8 +17,13 @@ angular.module('starter', [
 	'barebone.products',
 	'barebone.push',
 	'barebone.search',
+<<<<<<< .merge_file_a11068
 	'barebone.sitemap',
 	'barebone.venues',
+=======
+	'barebone.sitemap',	
+	'chilled.favourites',	
+>>>>>>> .merge_file_a11232
 	'gMaps',
 	'ngCordova'
 ])
@@ -46,13 +51,3 @@ angular.module('starter', [
 	$ionicConfigProvider.views.maxCache(0);
 	$urlRouterProvider.otherwise('/app/home');
 });
-
-function guid() {
-  function s4() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  }
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-    s4() + '-' + s4() + s4() + s4();
-}
