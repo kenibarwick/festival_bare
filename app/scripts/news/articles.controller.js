@@ -20,7 +20,9 @@
 
 			var day = $location.path().replace('/app/', '').toLowerCase();
 
-    		var canceler = $q.defer();
+			console.log(day);
+    		
+			var canceler = $q.defer();
 		  
 		    var timeoutPromise = $timeout(function() {
 		      canceler.resolve(); //aborts the request when timed out
@@ -35,7 +37,7 @@
 				$timeout.cancel(timeoutPromise);
 			}, function(response) {
 				$ionicPopup.alert({
-			    	title: 'there was an error Set!',
+			    	title: 'there was an error',
 			     	template: response
 				});
 			});
