@@ -40,13 +40,13 @@
 					var favourites = $linq.Enumerable().From(user.favourites);
 					var filtered = $linq.Enumerable().From(acts).Where(function(x){
 						return favourites.Any(function(f){
-							return x.id == f.id;
+							return x.id === f.id;
 						});
 						//return x.id == 1;
 					}).ToArray();
 
 					vm.articles = filtered;
-				};
+				}
 		}
 
 		function navigate(articleId) {

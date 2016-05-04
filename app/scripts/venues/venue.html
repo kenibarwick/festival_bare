@@ -1,0 +1,19 @@
+<ion-view view-title="Venue" >
+	<ion-content class="has-header expanded">
+		<div class="mid-bar dark-bg z1 padding">
+			<div class="row">
+				<div class="col col-75">
+					<img class="block" ng-src="{{vm.venue.image}}" />
+					<h3>{{vm.venue.name}}</h3><br>{{vm.venue.tags}}</div>
+				<div>
+				</div>
+			</div>
+		</div>
+		<div class="content-inner">
+			<p>{{vm.venue.description}}</p>
+		</div>
+	</ion-content>
+	<a class="button button-fab button-fab-bottom-right button-balanced" href="share">
+		<i class="icon ion-share" style="vertical-align: top;"></i>
+	</a>
+</ion-view>

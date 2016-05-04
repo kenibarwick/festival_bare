@@ -19,6 +19,7 @@
 
 		productsService.all(function(data) {
 			vm.products = data;
+			console.log(data);
 			$timeout(function() {
 				ionicMaterialMotion.fadeSlideInRight({
 					selector: '.animate-fade-slide-in .item'

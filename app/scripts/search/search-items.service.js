@@ -23,11 +23,11 @@
 			icon: 'ion-calendar'
 		}, {
 			title: 'Venues',
-			path: 'products',
+			path: 'venues',
 			icon: 'ion-home'
 		}, {
 			title: 'Artists',
-			path: 'articles',
+			path: 'all',
 			icon: 'ion-person-stalker'
 		}];
 
