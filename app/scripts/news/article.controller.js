@@ -46,7 +46,7 @@
 			else
 			{
 				for(var i = 0; i < user.favourites.length; i++) {
-					if (user.favourites[i].id == article.id) {
+					if (user.favourites[i].id === article.id) {
 						user.favourites.splice(i, 1);	
 					} 
 				}
