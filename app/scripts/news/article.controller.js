@@ -49,6 +49,8 @@
 			     template: message
 			});
 		}
+		
+		motion.expandHeader();
 	}
 
 })();

@@ -9,5 +9,6 @@
 
 	/* @ngInject */
 	function SitemapController($scope, sitemapService, motion) {
+		motion.expandHeader();
 	}
 })();

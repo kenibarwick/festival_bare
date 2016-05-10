@@ -16,7 +16,7 @@ img {max-width: 100%;}
 }
 
 .menu-open .bar.bar-header.expanded {
-    background-color: #81CBF0;
+    background-color: transparent;
 }
 
 .menu h2 {
@@ -42,7 +42,7 @@ img {max-width: 100%;}
 }
 
 .menu .list .item{
-	background-color: #81CBF0 !important;
+	background-color: transparent !important;
 }
 
 .list .item{
@@ -156,6 +156,12 @@ p.categories {
 */
 .contentHeading {
 	float: left;
+}
+/* 
+	About
+ */
+.tabs.tabs-icon-top {
+	background-color: transparent;	
 }
 
 .contentHeadingIcon {

@@ -58,5 +58,7 @@
 		function doRefresh() {
 			setTimeout($scope.$broadcast('scroll.refreshComplete'), 16000);
 		}
+		
+		motion.expandHeader();
 	}
 })();
