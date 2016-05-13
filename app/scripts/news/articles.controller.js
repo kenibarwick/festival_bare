@@ -47,7 +47,8 @@
 			return newsService.all().then(function(data){
 				vm.articles = $linq.Enumerable().From(data).Where(function (x) {
                          return x.day.toLowerCase() == day
-                     }).ToArray();
+                     })
+				.ToArray();
 			});
 		}
 
