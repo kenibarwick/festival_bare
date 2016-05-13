@@ -5,10 +5,11 @@
 		.module('barebone.products')
 		.factory('productsService', productsService);
 
-	productsService.$inject = ['$q', '$http'];
+	productsService.$inject = ['$http', '$q', 'Restangular'];
+
 
 	/* @ngInject */
-	function productsService($q, $http) {
+	function productsService($http, $q, Restangular) {
 		// var url = 'http://skounis.s3.amazonaws.com/mobile-apps/barebone-glossy/products.json';
 		var url = 'http://chilled-schedule.azurewebsites.net/locations';
 		var result = [];
@@ -19,29 +20,29 @@
 		};
 		return service;
 
-		// ******************************************************************
+		function all(){
 
-		// http://stackoverflow.com/questions/17533888/s3-access-control-allow-origin-header
-		function all(callback) {
-			$http.get(url)
-				.success(function(data, status, headers, config) {
-					// this callback will be called asynchronously
-					// when the response is available
-					result = data;
-					callback(result);
-				})
-				.error(function(data, status, headers, config) {
-					// called asynchronously if an error occurs
-					// or server returns response with an error status.
-					console.log('ERROR (Products):' + status);
-					callback(result);
+			var deferred = $q.defer();
+
+			Restangular.all('locations').getList()
+				.then(function (locations) {
+					window.localStorage['chilled_locations'] = JSON.stringify(locations);
+					result = locations;
+					deferred.resolve(locations);
+				}, function(response) {
+					var locationsString = window.localStorage['chilled_locations'];
+					var locations = JSON.parse(locationsString);
+					result = locations;
+					deferred.resolve(locations);
 				});
+
+			return deferred.promise;
 		}
 
-		function get(productId) {
-			// we take a product from cache but we can request ir from the server
+		function get(locationId) {
+			// we take an article from cache but we can request ir from the server
 			for (var i = 0; i < result.length; i++) {
-				if (result[i].id === productId) {
+				if (result[i].id === locationId) {
 					return $q.when(result[i]);
 				}
 			}
