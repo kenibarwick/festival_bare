@@ -5,16 +5,13 @@
 				<div class="col col-75">
 					<img class="block" ng-src="{{vm.article.thumb}}" />
 					<h3>{{vm.article.name}}</h3><br>{{vm.article.tags}}</div>
-				<div>
-				<button ng-click="vm.favourite(vm.article)"></button>
-				</div>
 			</div>
 		</div>
 		<div class="content-inner">
 			<p>{{vm.article.description}}</p>
 		</div>
 	</ion-content>
-	<a class="button button-fab button-fab-bottom-right button-balanced" href="share">
+	<a class="button button-fab button-fab-bottom-right button-balanced" href="#" ng-click="vm.share(vm.article)">
 		<i class="icon ion-share" style="vertical-align: top;"></i>
 	</a>
 	<a class="button button-fab button-fab-bottom-left button-balanced" href="#" ng-click="vm.favourite(vm.article)">
