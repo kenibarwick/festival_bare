@@ -5,10 +5,21 @@
 		.module('barebone.products')
 		.controller('ProductsController', ProductsController);
 
+<<<<<<< HEAD
 	ProductsController.$inject = ['$scope', '$state', 'productsService', '$timeout', 'motion', 'ionicMaterialMotion', '$ionicPopup', '$location', '$linq', '$q'];
 
 	/* @ngInject */
 	function ProductsController($scope, $state, productsService, $timeout, motion, ionicMaterialMotion, $ionicPopup, $location, $linq, $q) {
+=======
+	ProductsController.$inject = [
+									'$scope', 'productsService', '$timeout', 'motion', 
+									'ionicMaterialMotion', '$ionicPopup', '$location', '$linq', '$q'];
+
+	/* @ngInject */
+	function ProductsController(
+									$scope, productsService, $timeout, motion, 
+									ionicMaterialMotion, $ionicPopup, $location, $linq, $q) {
+>>>>>>> f2069fc04eb63b14f4090ed41cf762b0569722ab
 		var vm = angular.extend(this, {
 			products: [],
 			navigate: navigate,
@@ -25,8 +36,9 @@
 		  
 		    var timeoutPromise = $timeout(function() {
 		      canceler.resolve(); //aborts the request when timed out
-		      console.log("Timed out");
-		    }, 10000); //we set a timeout for 10s and store the promise in order to be cancelled later if the data does not arrive within 250ms
+		      console.log('Timed out');
+		    }, 10000); 	// we set a timeout for 10s and store the promise in order 
+						// to be cancelled later if the data does not arrive within 250ms
 
 
 			loadLocations().then(function() {
@@ -47,8 +59,8 @@
 		function loadLocations() {
 			return productsService.all().then(function(data){
 				vm.products = $linq.Enumerable().From(data).ToArray();
-			});;
-		};
+			});
+		}
 	
 		function doRefresh() {
 			setTimeout($scope.$broadcast('scroll.refreshComplete'), 16000);
