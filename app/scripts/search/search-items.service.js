@@ -27,7 +27,7 @@
 			icon: 'ion-home'
 		}, {
 			title: 'Artists',
-			path: 'articles',
+			path: 'artists',
 			icon: 'ion-person-stalker'
 		}];
 

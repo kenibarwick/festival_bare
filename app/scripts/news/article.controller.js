@@ -5,7 +5,11 @@
 		.module('barebone.news')
 		.controller('ArticleController', ArticleController);
 
-	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService', '$linq'];
+	ArticleController.$inject = 
+		[
+			'$scope', '$stateParams', 'newsService', 
+			'motion', '$ionicPopup', 'userService', '$linq'
+		];
 
 	/* @ngInject */
 	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService, $linq) {
@@ -30,19 +34,32 @@
 			var user = (userString) ? JSON.parse(userString) : newUser(userService);
 
 			var isSet = $linq.Enumerable().From(user.favourites).Any(function (x) {
-                         return x.id == articleId
+                         return x.id === articleId;
                      });
+
+			var message;
 
 			if (!isSet)
 			{
-				var favourite = { id : article.id, name : article.name };
+				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
+
+				message = 'You will receive a notification when ' + article.name + ' is about to start';
+			}
+			else
+			{
+				for(var i = 0; i < user.favourites.length; i++) {
+					if (user.favourites[i].id === article.id) {
+						user.favourites.splice(i, 1);	
+					} 
+				}
+
+				message = 'The reminder for ' + article.name + ' has been removed';
 			}
 
 			userService.save(user);
 			
 			window.localStorage['chilled_user'] = JSON.stringify(user);
-			var message = 'You will receive a notification when ' + article.name + ' is about to start';
 
 			$ionicPopup.alert({
 			     title: 'Favourite Set!',

@@ -21,6 +21,8 @@
 		productsService.get(productId)
 			.then(function(product) {
 				vm.product = product;
+
+				motion.expandHeader();
 			});
 		}
 })();
