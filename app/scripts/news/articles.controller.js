@@ -7,13 +7,11 @@
 
 	ArticlesController.$inject = 
 	[
-		'$scope', '$state', 'newsService', 'motion', '$timeout', 
-		'$ionicPopup', '$location', '$linq', '$q'	
+		'$scope', '$state', 'newsService', 'motion', '$timeout', '$ionicPopup', '$location', '$linq', '$q'	
 	];
 
 	/* @ngInject */
-	function ArticlesController($scope, $state, newsService, motion, $timeout, $ionicPopup, 
-								$location, $linq, $q)
+	function ArticlesController($scope, $state, newsService, motion, $timeout, $ionicPopup, $location, $linq, $q)
 		{
 		var vm = angular.extend(this, {
 			articles: [],
@@ -62,7 +60,7 @@
 
 		function loadNews(day) {
 			return newsService.all().then(function(data){
-<<<<<<< HEAD
+				
 				var data = $linq.Enumerable().From(data).Where(function (x) {
                          return (day == 'all') || (x.day.toLowerCase() == day)
                      });
@@ -76,12 +74,6 @@
 			    	title: 'there was an error Set!',
 			     	template: response
 				}); 
-=======
-				vm.articles = $linq.Enumerable().From(data).Where(function (x) {
-                         return x.day.toLowerCase() === day;
-                     })
-				.ToArray();
->>>>>>> f2069fc04eb63b14f4090ed41cf762b0569722ab
 			});
 		}
 

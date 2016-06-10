@@ -5,21 +5,11 @@
 		.module('barebone.products')
 		.controller('ProductsController', ProductsController);
 
-<<<<<<< HEAD
 	ProductsController.$inject = ['$scope', '$state', 'productsService', '$timeout', 'motion', 'ionicMaterialMotion', '$ionicPopup', '$location', '$linq', '$q'];
 
 	/* @ngInject */
 	function ProductsController($scope, $state, productsService, $timeout, motion, ionicMaterialMotion, $ionicPopup, $location, $linq, $q) {
-=======
-	ProductsController.$inject = [
-									'$scope', 'productsService', '$timeout', 'motion', 
-									'ionicMaterialMotion', '$ionicPopup', '$location', '$linq', '$q'];
 
-	/* @ngInject */
-	function ProductsController(
-									$scope, productsService, $timeout, motion, 
-									ionicMaterialMotion, $ionicPopup, $location, $linq, $q) {
->>>>>>> f2069fc04eb63b14f4090ed41cf762b0569722ab
 		var vm = angular.extend(this, {
 			products: [],
 			navigate: navigate,
