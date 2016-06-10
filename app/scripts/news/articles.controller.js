@@ -20,6 +20,11 @@
 
 			var day = $location.path().replace('/app/', '').toLowerCase();
 
+			if (day = 'artists')
+			{
+				day = 'all'
+			}
+
     		var canceler = $q.defer();
 		  
 		    var timeoutPromise = $timeout(function() {
@@ -29,15 +34,21 @@
 
 
 			loadNews(day).then(function() {
-				motion.showItems();
-				motion.ink();
-
-				$timeout.cancel(timeoutPromise);
+				try {
+					motion.showItems();
+					motion.ink();
+				}
+				catch(err) {
+					console.log(err);	
+				}
+				finally {
+					$timeout.cancel(timeoutPromise);	
+				}
 			}, function(response) {
 				$ionicPopup.alert({
 			    	title: 'there was an error Set!',
 			     	template: response
-				});
+				}); 
 			});
 		
 		})();
@@ -45,10 +56,19 @@
 
 		function loadNews(day) {
 			return newsService.all().then(function(data){
-				vm.articles = $linq.Enumerable().From(data).Where(function (x) {
-                         return x.day.toLowerCase() == day
-                     })
-				.ToArray();
+				var data = $linq.Enumerable().From(data).Where(function (x) {
+                         return (day == 'all') || (x.day.toLowerCase() == day)
+                     });
+				if (day = 'all')
+				{
+					data = data.OrderBy("$.name")
+				}
+				vm.articles = data.ToArray();
+			}, function(response) {
+				$ionicPopup.alert({
+			    	title: 'there was an error Set!',
+			     	template: response
+				}); 
 			});
 		}
 

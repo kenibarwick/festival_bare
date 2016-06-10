@@ -37,6 +37,15 @@
 						}
 					}
 				})
+				.state('app.artists', {
+					url: '/artists',
+					views: {
+						'menuContent': {
+							templateUrl: 'scripts/news/articles.html',
+							controller: 'ArticlesController as vm'
+						}
+					}
+				})
 				.state('app.article', {
 					url: '/articles/:articleId',
 					views: {

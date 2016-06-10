@@ -5,12 +5,13 @@
 		.module('barebone.products')
 		.controller('ProductsController', ProductsController);
 
-	ProductsController.$inject = ['$scope', 'productsService', '$timeout', 'motion', 'ionicMaterialMotion', '$ionicPopup', '$location', '$linq', '$q'];
+	ProductsController.$inject = ['$scope', '$state', 'productsService', '$timeout', 'motion', 'ionicMaterialMotion', '$ionicPopup', '$location', '$linq', '$q'];
 
 	/* @ngInject */
-	function ProductsController($scope, productsService, $timeout, motion, ionicMaterialMotion, $ionicPopup, $location, $linq, $q) {
+	function ProductsController($scope, $state, productsService, $timeout, motion, ionicMaterialMotion, $ionicPopup, $location, $linq, $q) {
 		var vm = angular.extend(this, {
 			products: [],
+			navigate: navigate,
 			doRefresh: doRefresh
 		});
 
@@ -52,5 +53,10 @@
 		function doRefresh() {
 			setTimeout($scope.$broadcast('scroll.refreshComplete'), 16000);
 		}
+
+		function navigate(productId) {
+			$state.go('app.product', { productId: productId });
+		}
+
 	}
 })();
