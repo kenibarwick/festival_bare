@@ -16,18 +16,21 @@
 		var vm = angular.extend(this, {
 			articles: [],
 			navigate: navigate,
-			doRefresh: doRefresh
+			doRefresh: doRefresh,
+			header: ''
 		});
 
 		(function activate() {
-			motion.expandHeader();
+			//motion.expandHeader();
 
 			var day = $location.path().replace('/app/', '').toLowerCase();
 
-			if (day = 'artists')
+			if (day == 'artists')
 			{
 				day = 'all'
 			}
+
+			vm.header = capitalizeFirstLetter(day);
 
     		var canceler = $q.defer();
 		  
@@ -83,6 +86,10 @@
 
 		function doRefresh() {
 			setTimeout($scope.$broadcast('scroll.refreshComplete'), 16000);
+		}
+
+		function capitalizeFirstLetter(string) {
+		    return string.charAt(0).toUpperCase() + string.slice(1);
 		}
 	}
 })();

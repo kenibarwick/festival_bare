@@ -28,7 +28,5 @@
 			});
 		}
 		vm.markers = markers;
-
-		motion.expandHeader();
 	}
 })();

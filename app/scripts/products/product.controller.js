@@ -13,16 +13,11 @@
 			product: null
 		});
 
-		motion.expandHeader();
-		// **********************************************
-
 		var productId = parseInt($stateParams.productId);
 
 		productsService.get(productId)
 			.then(function(product) {
 				vm.product = product;
-
-				motion.expandHeader();
 			});
 		}
 })();
