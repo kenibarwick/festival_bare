@@ -1,6 +1,8 @@
-<ion-view view-title="Venues">
-	<ion-content class="has-header expanded">
-
+<ion-view>
+	<ion-nav-title>
+     	{{vm.product.name}}
+    </ion-nav-title>
+	<ion-content>
 		<ion-slide-box>
 			<ion-slide ng-repeat="pic in vm.pictures">
 				<div class="box blue"><img class="block" ng-src="{{pic}}"/></div>

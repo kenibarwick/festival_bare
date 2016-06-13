@@ -62,5 +62,11 @@
 
     		//RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/');
     		RestangularProvider.setDefaultHttpFields({ timeout: 2000 });
-		});
+		})
+	.filter('favouriteHighlight', function()
+		{
+			return function(input) {
+				return input ? '*' : ''
+			}
+		})
 })();

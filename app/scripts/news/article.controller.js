@@ -16,6 +16,7 @@
 		var vm = angular.extend(this, {
 			article: null,
 			favourite: favourite,
+			isFavourite: false
 		});
 
 		// ********************************************************************
@@ -25,7 +26,12 @@
 			.then(function(article) {
 				vm.article = article;
 
-				motion.expandHeader();
+				var userString = window.localStorage['chilled_user'];
+				var user = (userString) ? JSON.parse(userString) : newUser(userService);
+
+				vm.isFavourite = $linq.Enumerable().From(user.favourites).Any(function (x) {
+	                         return x.id === articleId;
+	                     });
 			});
 
 		function favourite(article) {
@@ -45,6 +51,8 @@
 				user.favourites.push( { id : article.id, name : article.name });
 
 				message = 'You will receive a notification when ' + article.name + ' is about to start';
+
+				vm.isFavourite = true;
 			}
 			else
 			{
@@ -55,6 +63,8 @@
 				}
 
 				message = 'The reminder for ' + article.name + ' has been removed';
+
+				vm.isFavourite = false;
 			}
 
 			userService.save(user);

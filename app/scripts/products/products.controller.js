@@ -16,11 +16,7 @@
 			doRefresh: doRefresh
 		});
 
-		motion.expandHeader();
-		// ******************************************************
-
 		(function activate() {
-			motion.expandHeader();
 
     		var canceler = $q.defer();
 		  
