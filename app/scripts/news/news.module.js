@@ -56,11 +56,11 @@
 					}
 				});
 
-    		RestangularProvider.setBaseUrl('http://localhost:8080/');
+    		//RestangularProvider.setBaseUrl('http://localhost:8080/');
 
     		//localStorage.removeItem('chilled_user');
 
-    		//RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/');
+    		RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/');
     		RestangularProvider.setDefaultHttpFields({ timeout: 2000 });
 		})
 	.filter('favouriteHighlight', function()
