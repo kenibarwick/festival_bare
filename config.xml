@@ -52,12 +52,16 @@
   <feature name="NetworkStatus">
     <param name="android-package" value="org.apache.cordova.NetworkManager"/>
   </feature>
+  <!-- Do not auto hide splash on iOS -->
+  <preference name="AutoHideSplashScreen" value="false" />
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="1000"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
+
+<gap:plugin name="org.apache.cordova.splashscreen" />
   <engine name="ios" spec="^3.9.2"/>
   <plugin name="de.appplant.cordova.plugin.email-composer" spec="0.8.2"/>
 </widget>
