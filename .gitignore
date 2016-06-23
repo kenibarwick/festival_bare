@@ -14,3 +14,4 @@ plugins
 *.DS_Store
 
 app/scripts/configuration.js
+app/scripts/news/news.module.js.rej
