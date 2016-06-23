@@ -18,7 +18,7 @@
 
 		function save(user){
 
-			Restangular.service('users').post(user)
+			Restangular.service('users').post(user);
 		}
 	}
 })();

@@ -1,5 +1,8 @@
-<ion-view view-title="Artists">
-	<ion-content class="has-header expanded">
+<ion-view>
+ 	<ion-nav-title>
+     	{{vm.header}}
+    </ion-nav-title>
+	<ion-content>
 	 <div class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
         <input type="search" placeholder="Search" ng-model="searchText">
@@ -14,7 +17,7 @@
 				class="item-thumbnail-left item-text-wrap ink"
 				ng-repeat="article in vm.articles | filter:searchText" ng-click="vm.navigate(article.id)">
 				<img ng-src="{{article.thumb}}">
-				<h2>{{article.name}} - {{article.type}}</h2>
+				<h2><b>{{article.name}}</b> - {{article.type}}</h2>
 				<h2>{{article.day}} {{article.start | amDateFormat:'HH:mm'}} - {{article.end | amDateFormat:'HH:mm'}}</h2>
 				<!--<p>{{article.description | limitTo: 40}}{{article.description.length > 40 ? '...' : ''}}</p>-->
 				<p>{{article.tags}}</p>

@@ -57,7 +57,7 @@
 				watch.then(null,
 					function(err) {
 						$ionicLoading.hide();
-						console.log("Error while watching for position changes: " + JSON.stringify(err));
+						console.log('Error while watching for position changes: ' + JSON.stringify(err));
 				},
 					processGeolocation);
 			}

@@ -5,13 +5,18 @@
 		.module('barebone.news')
 		.controller('ArticleController', ArticleController);
 
-	ArticleController.$inject = ['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService', '$linq'];
+	ArticleController.$inject = 
+		[
+			'$scope', '$stateParams', 'newsService', 
+			'motion', '$ionicPopup', 'userService', '$linq'
+		];
 
 	/* @ngInject */
 	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService, $linq) {
 		var vm = angular.extend(this, {
 			article: null,
 			favourite: favourite,
+			isFavourite: false
 		});
 
 		// ********************************************************************
@@ -21,7 +26,12 @@
 			.then(function(article) {
 				vm.article = article;
 
-				motion.expandHeader();
+				var userString = window.localStorage['chilled_user'];
+				var user = (userString) ? JSON.parse(userString) : newUser(userService);
+
+				vm.isFavourite = $linq.Enumerable().From(user.favourites).Any(function (x) {
+	                         return x.id === articleId;
+	                     });
 			});
 
 		function favourite(article) {
@@ -30,27 +40,31 @@
 			var user = (userString) ? JSON.parse(userString) : newUser(userService);
 
 			var isSet = $linq.Enumerable().From(user.favourites).Any(function (x) {
-                         return x.id == articleId
+                         return x.id === articleId;
                      });
 
 			var message;
 
 			if (!isSet)
 			{
-				var favourite = { id : article.id, name : article.name };
+				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
 
 				message = 'You will receive a notification when ' + article.name + ' is about to start';
+
+				vm.isFavourite = true;
 			}
 			else
 			{
 				for(var i = 0; i < user.favourites.length; i++) {
-					if (user.favourites[i].id == article.id) {
+					if (user.favourites[i].id === article.id) {
 						user.favourites.splice(i, 1);	
 					} 
 				}
 
 				message = 'The reminder for ' + article.name + ' has been removed';
+
+				vm.isFavourite = false;
 			}
 
 			userService.save(user);
