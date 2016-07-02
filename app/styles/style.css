@@ -16,7 +16,7 @@ img {max-width: 100%;}
 }
 
 .menu-open .bar.bar-header.expanded {
-    background-color: #81CBF0;
+    /* background-color: #81CBF0; */
 }
 
 .menu h2 {
@@ -42,7 +42,7 @@ img {max-width: 100%;}
 }
 
 .menu .list .item{
-	background-color: #81CBF0 !important;
+	/* background-color: #81CBF0 !important; */
 }
 
 .list .item{
@@ -53,6 +53,7 @@ img {max-width: 100%;}
 .scroll-content {
 	
 	background-image: url("../images/bg.png") !important; 
+	 background-size: auto 100%;
 }
 
 /*
@@ -82,7 +83,7 @@ img {max-width: 100%;}
   bottom: 0;
   margin: 0;
   border: 0;
-  background: rgba(32, 145, 199, 0.6);
+  /* background: rgba(32, 145, 199, 0.6); */
   text-align: center;
  }
  
