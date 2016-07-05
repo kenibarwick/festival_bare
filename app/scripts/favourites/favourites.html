@@ -15,9 +15,8 @@
 				ng-repeat="article in vm.articles | filter:searchText" ng-click="vm.navigate(article.id)">
 				<img ng-src="{{article.thumb}}">
 				<h2><b>{{article.name}}</b> - {{article.type}}</h2>
-				<h2>{{article.day}} {{article.start | amDateFormat:'HH:mm'}} - {{article.end | amDateFormat:'HH:mm'}}</h2>
-				<!--<p>{{article.description | limitTo: 40}}{{article.description.length > 40 ? '...' : ''}}</p>-->
-				<p>{{article.tags}}</p>
+				<h2>{{article.day}} {{article.start | amDateFormat:'HH:mm'}} - {{article.end | amDateFormat:'HH:mm'}} - {{article.location}}</h2>
+				<p>{{article.description | limitTo: 40}}{{article.description.length > 40 ? '...' : ''}}</p>				
 			</ion-item>
 		</ion-list>
 	</ion-content>

@@ -18,7 +18,8 @@ angular.module('starter', [
 	'barebone.push',
 	'barebone.search',
 	'barebone.sitemap',	
-	'chilled.favourites',	
+	'chilled.favourites',
+	'chilled.about',	
 	'gMaps',
 	'ngCordova'
 ])

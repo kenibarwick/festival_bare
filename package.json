@@ -410,7 +410,11 @@
     "cordova-plugin-geolocation",
     "cordova-plugin-whitelist",
     "cordova-plugin-transport-security",
-    "cordova-plugin-network-information"
+    "cordova-plugin-network-information",
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-device",
+    "cordova-plugin-inappbrowser"
   ],
   "cordovaPlatforms": []
 }

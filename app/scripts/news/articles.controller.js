@@ -21,7 +21,7 @@
 		});
 
 		(function activate() {
-			//motion.expandHeader();
+			//
 
 			var day = $location.path().replace('/app/', '').toLowerCase();
 
@@ -67,9 +67,13 @@
 				var data = $linq.Enumerable().From(data).Where(function (x) {
                          return (day == 'all') || (x.day.toLowerCase() == day)
                      });
-				if (day = 'all')
+				if (day == 'all')
 				{
 					data = data.OrderBy("$.name")
+				}
+				else
+				{
+					data = data.OrderBy("$.day").ThenBy("$.start")
 				}
 				vm.articles = data.ToArray();
 			}, function(response) {
