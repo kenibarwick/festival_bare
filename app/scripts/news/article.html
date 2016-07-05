@@ -6,13 +6,10 @@
 		<div class="mid-bar dark-bg z1 padding">
 			<div class="row">
 				<div class="col col-75">
-					<img class="block" ng-src="{{vm.article.thumb}}" />
+					<img class="block" ng-src="{{vm.article.picture}}" />
 					<h3>{{vm.article.name}}</h3>
 					<h4>{{vm.article.day}} {{vm.article.start | amDateFormat:'HH:mm'}} - {{vm.article.end | amDateFormat:'HH:mm'}}</h4>
-					<br>{{vm.article.tags}}
-				</div>
-				<div>
-				<button ng-click="vm.favourite(vm.article)"></button>
+					<h5>{{vm.article.location}}</h5>
 				</div>
 			</div>
 		</div>
@@ -20,10 +17,10 @@
 			<p>{{vm.article.description}}</p>
 		</div>
 	</ion-content>
-	<a class="button button-fab button-fab-bottom-right button-balanced" href="share">
-		<i class="icon ion-share" style="vertical-align: top;"></i>
-	</a>
-	<a class="button button-fab button-fab-bottom-left button-balanced" href="#" ng-click="vm.favourite(vm.article)">
+	<a class="button button-fab button-fab-bottom-right button-balanced" href="#" ng-click="vm.favourite(vm.article)">
 		<i class="icon ion-heart" style="vertical-align: bottom;"></i>
 	</a>
-</ion-view>
+<!-- 	<a class="button button-fab button-fab-bottom-left button-balanced" href="share">
+		<i class="icon ion-share" style="vertical-align: top;"></i>
+	</a>
+ --></ion-view>
