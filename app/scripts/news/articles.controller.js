@@ -21,7 +21,7 @@
 		});
 
 		(function activate() {
-			//motion.expandHeader();
+			//
 
 			var day = $location.path().replace('/app/', '').toLowerCase();
 
