@@ -1,19 +1,23 @@
-<ion-view view-title="Venues">
-	<ion-content class="has-header expanded">
-
-		<ion-slide-box>
+<ion-view>
+	<ion-nav-title>
+     	{{vm.product.name}}
+    </ion-nav-title>
+	<ion-content>
+<!-- 		<ion-slide-box>
 			<ion-slide ng-repeat="pic in vm.pictures">
 				<div class="box blue"><img class="block" ng-src="{{pic}}"/></div>
 			</ion-slide>
-		</ion-slide-box>
+		</ion-slide-box> -->
 
 		<div class="mid-bar dark-bg z1 padding">
-			<h3>{{vm.name}}</h3>
+		<img ng-src="{{vm.product.image}}">
+		<h3>{{vm.product.name}}</h3>
 			<p>{{vm.product.type}}</p>
+			
 		</div>
 
 		<div class="content-inner">
-			<p>{{vm.description}}</p>
+			<p>{{vm.product.description}}</p>
 		</div>
 	</ion-content>
 </ion-view>

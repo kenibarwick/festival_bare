@@ -3,9 +3,10 @@
 
 	angular
 		.module('barebone.products', [
-			'ionic'
+			'ionic',
+			'restangular'
 		])
-		.config(function($stateProvider) {
+		.config(function($stateProvider, RestangularProvider) {
 			$stateProvider
 				.state('app.products', {
 					url: '/products',
@@ -25,6 +26,14 @@
 						}
 					}
 				});
+
+
+    		//RestangularProvider.setBaseUrl('http://localhost:8080/');
+
+    		//localStorage.removeItem('chilled_user');
+
+    		RestangularProvider.setBaseUrl('http://chilled-schedule.azurewebsites.net/');
+    		RestangularProvider.setDefaultHttpFields({ timeout: 10000 });
 
 		});
 

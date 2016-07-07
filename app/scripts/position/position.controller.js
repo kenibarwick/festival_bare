@@ -17,7 +17,7 @@
 
 		console.log('Before activation ...');
 		(function activate() {
-			motion.expandHeader();
+			
 
 			$ionicLoading.show({
 				duration: 3000,

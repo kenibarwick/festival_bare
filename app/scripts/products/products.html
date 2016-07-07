@@ -1,9 +1,10 @@
 <ion-view id="products" view-title="Venues">
-	<ion-content class="has-header expanded animate-fade-slide-in">
+	<ion-content class="animate-fade-slide-in">
 		<ion-refresher
 			pulling-text="Pull to refresh..."
 			on-refresh="vm.doRefresh()">
 		</ion-refresher>
+<<<<<<< HEAD
 
 		<div class="list half">
 			<div class="card card-gallery item item-text-wrap" ng-repeat="p in vm.products" ng-if="$index % 2 === 0">
@@ -33,5 +34,16 @@
 			</div>
 		</div>
 
+=======
+		<ion-list class="animate-fade-slide-in-right">
+			<ion-item
+				class="item-thumbnail-left item-text-wrap ink"
+				ng-repeat="location in vm.products | filter:searchText" ng-click="vm.navigate(location.id)">
+				<img ng-src="{{location.thumb}}">
+				<h2>{{location.name}}</h2>
+				<p>{{location.description}}</p>
+			</ion-item>
+		</ion-list>
+>>>>>>> 3cafd20de777529ec074c3a3fc5619c1c48e480d
 	</ion-content>
 </ion-view>

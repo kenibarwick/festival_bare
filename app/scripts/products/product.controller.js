@@ -13,9 +13,6 @@
 			product: null
 		});
 
-		motion.expandHeader();
-		// **********************************************
-
 		var productId = parseInt($stateParams.productId);
 
 		productsService.get(productId)

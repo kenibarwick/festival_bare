@@ -6,13 +6,21 @@
 		.controller('ArticleController', ArticleController);
 
 	ArticleController.$inject = 
+<<<<<<< HEAD
 	['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService', '$linq'];
+=======
+		[
+			'$scope', '$stateParams', 'newsService', 
+			'motion', '$ionicPopup', 'userService', '$linq'
+		];
+>>>>>>> 3cafd20de777529ec074c3a3fc5619c1c48e480d
 
 	/* @ngInject */
 	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService, $linq) {
 		var vm = angular.extend(this, {
 			article: null,
 			favourite: favourite,
+			isFavourite: false
 		});
 
 		// ********************************************************************
@@ -22,7 +30,12 @@
 			.then(function(article) {
 				vm.article = article;
 
-				motion.expandHeader();
+				var userString = window.localStorage['chilled_user'];
+				var user = (userString) ? JSON.parse(userString) : newUser(userService);
+
+				vm.isFavourite = $linq.Enumerable().From(user.favourites).Any(function (x) {
+	                         return x.id === articleId;
+	                     });
 			});
 
 		function favourite(article) {
@@ -41,7 +54,10 @@
 				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
 
-				message = 'You will receive a notification when ' + article.name + ' is about to start';
+				// message = 'You will receive a notification when ' + article.name + ' is about to start';
+				message = 'You will now find ' + article.name + " in your favourites list. They thank you :)";
+
+				vm.isFavourite = true;
 			}
 			else
 			{
@@ -51,7 +67,10 @@
 					} 
 				}
 
-				message = 'The reminder for ' + article.name + ' has been removed';
+				// message = 'The reminder for ' + article.name + ' has been removed';
+				message = article.name + " has been removed from your favourite list. What happend? Did they not send you a birthday card?";
+
+				vm.isFavourite = false;
 			}
 
 			userService.save(user);
@@ -63,6 +82,8 @@
 			     template: message
 			});
 		}
+		
+		
 	}
 
 })();

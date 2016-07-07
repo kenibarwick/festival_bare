@@ -19,7 +19,8 @@ angular.module('starter', [
 	'barebone.search',
 	'barebone.venues',
 	'barebone.sitemap',	
-	'chilled.favourites',	
+	'chilled.favourites',
+	'chilled.about',	
 	'gMaps',
 	'ngCordova'
 ])
