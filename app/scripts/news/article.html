@@ -3,9 +3,9 @@
      	{{vm.article.name}} {{ vm.isFavourite | favouriteHighlight }}
     </ion-nav-title>
 	<ion-content>
-		<div class="mid-bar dark-bg z1 padding">
+		<div class="mid-bar z1 padding">
 			<div class="row">
-				<div class="col col-75">
+				<div class="col col-80">
 					<img class="block" ng-src="{{vm.article.picture}}" />
 					<h3>{{vm.article.name}}</h3>
 					<h4>{{vm.article.day}} {{vm.article.start | amDateFormat:'HH:mm'}} - {{vm.article.end | amDateFormat:'HH:mm'}}</h4>
