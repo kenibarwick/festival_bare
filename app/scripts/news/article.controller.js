@@ -50,7 +50,8 @@
 				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
 
-				message = 'You will receive a notification when ' + article.name + ' is about to start';
+				// message = 'You will receive a notification when ' + article.name + ' is about to start';
+				message = 'You will now find ' + article.name + " in your favourites list. They thank you :)";
 
 				vm.isFavourite = true;
 			}
@@ -62,7 +63,8 @@
 					} 
 				}
 
-				message = 'The reminder for ' + article.name + ' has been removed';
+				// message = 'The reminder for ' + article.name + ' has been removed';
+				message = article.name + " has been removed from your favourite list. What happend? Did they not send you a birthday card?";
 
 				vm.isFavourite = false;
 			}
@@ -76,6 +78,8 @@
 			     template: message
 			});
 		}
+		
+		
 	}
 
 })();
