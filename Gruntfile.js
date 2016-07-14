@@ -72,7 +72,7 @@ module.exports = function(grunt) {
 						facebookPermanentAccessToken: 'CAANL6xXrSHYBANNHhMUDugVZBHXfVQBMeWG6FmpYROWcOEmC2xze1BNiraZB87NCAZC3w08L7KhCBnhJItZCUzWCgBNzBjt0BkoV6qMoXjIZBjkWRTUGgZBR39OZAiP3DF76jufQ4hJ7xsdQc0l68vFAZAePdZCZAjkjTwaOeEZC22xi8ZAQYBqvNvYRgIfOZBzf4zRURHgrLtNazxzln8ZBkd9FZC7',
 						facebookPage: 'apple.inc',
 						// https://instagram.com/developer/
-						instagramAppId: '2998ca20ed924ca3be22907c6ae77363', //'ab4ccebff87a46e789e231bed83685e4'
+						instagramAppId: 'ab6e21979f6b4d8587f3092a5b149760', //'ab4ccebff87a46e789e231bed83685e4'
 						// https://developer.vimeo.com/api/authentication#single-user
 						vimeoAccessToken: 'd995ffff0228beba7c9716c3ee0d4add'
 					}
@@ -93,7 +93,7 @@ module.exports = function(grunt) {
 						facebookPermanentAccessToken: 'CAANL6xXrSHYBANNHhMUDugVZBHXfVQBMeWG6FmpYROWcOEmC2xze1BNiraZB87NCAZC3w08L7KhCBnhJItZCUzWCgBNzBjt0BkoV6qMoXjIZBjkWRTUGgZBR39OZAiP3DF76jufQ4hJ7xsdQc0l68vFAZAePdZCZAjkjTwaOeEZC22xi8ZAQYBqvNvYRgIfOZBzf4zRURHgrLtNazxzln8ZBkd9FZC7',
 						facebookPage: 'apple.inc',
 						// https://instagram.com/developer/
-						instagramAppId: '2998ca20ed924ca3be22907c6ae77363', //'ab4ccebff87a46e789e231bed83685e4'
+						instagramAppId: 'ab6e21979f6b4d8587f3092a5b149760', //'ab4ccebff87a46e789e231bed83685e4'
 						// https://developer.vimeo.com/api/authentication#single-user
 						vimeoAccessToken: 'd995ffff0228beba7c9716c3ee0d4add'
 					}
