@@ -78,8 +78,6 @@
 			     template: message
 			});
 		}
-		
-		
 	}
 
 })();
