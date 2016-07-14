@@ -54,6 +54,23 @@
 
 		function filterFavourites(acts) {
 
+<<<<<<< HEAD
+			var userString = window.localStorage['chilled_user'];
+			if (userString)
+				{
+					var user = JSON.parse(userString);
+					var favourites = $linq.Enumerable().From(user.favourites);
+					var filtered = $linq.Enumerable().From(acts).Where(function(x){
+						return favourites.Any(function(f){
+							return x.id === f.id;
+						});
+						//return x.id == 1;
+					}).ToArray();
+
+					vm.articles = filtered;
+				}
+		}
+=======
 		var userString = window.localStorage['chilled_user'];
 		if (userString)
 			{
@@ -64,6 +81,7 @@
 						return x.id === f.id;
 					});
 				}).ToArray();
+>>>>>>> 3cafd20de777529ec074c3a3fc5619c1c48e480d
 
 				vm.articles = filtered;
 			}

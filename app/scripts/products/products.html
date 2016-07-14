@@ -4,6 +4,37 @@
 			pulling-text="Pull to refresh..."
 			on-refresh="vm.doRefresh()">
 		</ion-refresher>
+<<<<<<< HEAD
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="p in vm.products" ng-if="$index % 2 === 0">
+				<div class="ink dark-bg">
+					<h2>{{p.name}}</h2>
+					<img class="full-image" ng-src="{{p.image}}">
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/product/{{p.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="list half">
+			<div class="card card-gallery item item-text-wrap" ng-repeat="p in vm.products" ng-if="$index % 2 === 1">
+				<div class="ink dark-bg">
+					<h2>{{p.name}}</h2>
+					<img class="full-image" ng-src="{{p.image}}">
+				</div>
+				<div class="stable-bg dark">
+					<a class="item item-icon-left" href="#/app/product/{{p.id}}">
+						<i class="icon ion-arrow-right-c"></i>Read more
+					</a>
+				</div>
+			</div>
+		</div>
+
+=======
 		<ion-list class="animate-fade-slide-in-right">
 			<ion-item
 				class="item-thumbnail-left item-text-wrap ink"
@@ -13,5 +44,6 @@
 				<p>{{location.description}}</p>
 			</ion-item>
 		</ion-list>
+>>>>>>> 3cafd20de777529ec074c3a3fc5619c1c48e480d
 	</ion-content>
 </ion-view>

@@ -66,7 +66,7 @@
 		function processGeolocation(position) {
 			$ionicLoading.hide();
 			var params = [];
-			for (var key in position.coords) {
+			for (var key = 0; key < position.coords.length; key++) {
 				params.push({
 					key: key,
 					value: position.coords[key]

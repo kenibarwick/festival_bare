@@ -1,13 +1,21 @@
+<<<<<<< HEAD
+<ion-view view-title="Artists">
+	<ion-content class="has-header expanded">
+
+	<div class="item item-input">
+=======
 <ion-view>
  	<ion-nav-title>
      	{{vm.header}}
     </ion-nav-title>
 	<ion-content>
 	 <div class="item item-input">
+>>>>>>> 3cafd20de777529ec074c3a3fc5619c1c48e480d
         <i class="icon ion-search placeholder-icon"></i>
         <input type="search" placeholder="Search" ng-model="searchText">
     </div>
-		<ion-refresher
+
+	<ion-refresher
 			pulling-text="Pull to refresh..."
 			on-refresh="vm.doRefresh()">
 		</ion-refresher>
@@ -15,7 +23,7 @@
 		<ion-list class="animate-fade-slide-in-right">
 			<ion-item
 				class="item-thumbnail-left item-text-wrap ink"
-				ng-repeat="article in vm.articles | filter:searchText" ng-click="vm.navigate(article.id)">
+				ng-repeat="article in vm.articles | filter:{day:'Friday'} | filter:searchText " ng-click="vm.navigate(article.id)">
 				<img ng-src="{{article.thumb}}">
 				<h2><b>{{article.name}}</b> - {{article.type}}</h2>
 				<h4>{{article.day}} {{article.start | amDateFormat:'HH:mm'}} - {{article.end | amDateFormat:'HH:mm'}} - {{article.location}}</h4>

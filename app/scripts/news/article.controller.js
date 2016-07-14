@@ -6,10 +6,14 @@
 		.controller('ArticleController', ArticleController);
 
 	ArticleController.$inject = 
+<<<<<<< HEAD
+	['$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService', '$linq'];
+=======
 		[
 			'$scope', '$stateParams', 'newsService', 
 			'motion', '$ionicPopup', 'userService', '$linq'
 		];
+>>>>>>> 3cafd20de777529ec074c3a3fc5619c1c48e480d
 
 	/* @ngInject */
 	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService, $linq) {

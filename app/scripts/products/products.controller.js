@@ -27,6 +27,14 @@
 						// to be cancelled later if the data does not arrive within 250ms
 
 
+<<<<<<< HEAD
+		productsService.all(function(data) {
+			vm.products = data;
+			console.log(data);
+			$timeout(function() {
+				ionicMaterialMotion.fadeSlideInRight({
+					selector: '.animate-fade-slide-in .item'
+=======
 			loadLocations().then(function() {
 				motion.showItems();
 				motion.ink();
@@ -36,6 +44,7 @@
 				$ionicPopup.alert({
 			    	title: 'there was an error Set!',
 			     	template: response
+>>>>>>> 3cafd20de777529ec074c3a3fc5619c1c48e480d
 				});
 			});
 		

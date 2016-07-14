@@ -17,6 +17,7 @@ angular.module('starter', [
 	'barebone.products',
 	'barebone.push',
 	'barebone.search',
+	'barebone.venues',
 	'barebone.sitemap',	
 	'chilled.favourites',
 	'chilled.about',	
@@ -31,7 +32,7 @@ angular.module('starter', [
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
 
-		$rootScope.uuid = guid();
+		// $rootScope.uuid = guid();
 
 		if (window.cordova && window.cordova.plugins.Keyboard) {
 			cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
