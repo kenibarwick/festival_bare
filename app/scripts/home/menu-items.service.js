@@ -17,14 +17,14 @@
 			title: 'Whats on',
 			path: 'search',
 			icon: 'ion-music-note'
-		// }, {
-			// title: 'News',
-			// path: 'news',
-			// icon: 'ion-ios-paper'
-		// }, {
-			// title: 'Site Map',
-			// path: 'sitemap',
-			// icon: 'ion-map'
+		}, {
+			title: 'Instagram',
+			path: 'instagram-login',
+			icon: 'ion-social-instagram'
+		}, {
+			title: 'Weekend Programme',
+			path: 'sitemap',
+			icon: 'ion-ios-book'
 		}];
 
 		return data;
