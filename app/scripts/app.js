@@ -18,10 +18,12 @@ angular.module('starter', [
 	'barebone.push',
 	'barebone.search',
 	'barebone.sitemap',	
+	'barebone.instagram',
 	'chilled.favourites',
 	'chilled.about',	
 	'gMaps',
-	'ngCordova'
+	'ngCordova',
+	'ngCordovaOauth'
 ])
 
 .value('_', window._)
