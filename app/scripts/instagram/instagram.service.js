@@ -63,6 +63,7 @@
 		function buildUrl(url) {
 			var accessToken = localStorageService.get('instagramAccessToken');
 			accessToken = accessToken;
+			console.log(url + '?access_token=' + accessToken);
 			return url + '?access_token=' + accessToken;
 		}
 	}
