@@ -21,7 +21,7 @@
 		});
 
 		(function activate() {
-			//motion.expandHeader();
+			//
 
 			var day = $location.path().replace('/app/', '').toLowerCase();
 
@@ -73,9 +73,8 @@
 				}
 				else
 				{
-					data = data.OrderBy("$.start");
+					data = data.OrderBy("$.day").ThenBy("$.start")
 				}
-				
 				vm.articles = data.ToArray();
 			}, function(response) {
 				$ionicPopup.alert({

@@ -18,13 +18,13 @@
 			path: 'search',
 			icon: 'ion-music-note'
 		}, {
-			title: 'News',
-			path: 'news',
-			icon: 'ion-ios-paper'
+			title: 'Instagram',
+			path: 'instagram-login',
+			icon: 'ion-social-instagram'
 		}, {
-			title: 'Site Map',
+			title: 'Weekend Programme',
 			path: 'sitemap',
-			icon: 'ion-map'
+			icon: 'ion-ios-book'
 		}];
 
 		return data;

@@ -8,7 +8,6 @@
 	ArticleController.$inject = 
 		[
 			'$scope', '$stateParams', 'newsService', 
-			'motion', '$ionicPopup', 'userService', '$linq', '$cordovaLocalNotification'
 		];
 
 	/* @ngInject */
@@ -55,7 +54,7 @@
 				var start = new Date(new Date(article.start).getTime() - 5*60000);
 				article.end = start;
 
-				message = 'You will receive a notification when ' + article.name + ' is about to start';
+				message = 'You will receive a notification when ' + article.name + ' is about to start. They thank you :)';
 							
 				var notificationMessage = article.name + ' at the ' + article.location + ' will start in 5 minutes';
 
@@ -78,7 +77,8 @@
 					} 
 				}
 
-				message = 'The reminder for ' + article.name + ' has been removed';
+				// message = 'The reminder for ' + article.name + ' has been removed';
+				message = article.name + " has been removed from your favourite list. What happend? Did they not send you a birthday card?";
 
 				$cordovaLocalNotification.cancel(article.id);
 
@@ -94,6 +94,8 @@
 			     template: message
 			});
 		}
+		
+		
 	}
 
 })();

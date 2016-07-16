@@ -14,7 +14,7 @@
 		});
 
 		(function activate() {
-			motion.expandHeader();
+			
 		})();
 	}
 })();
