@@ -59,5 +59,4 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
   <engine name="ios" spec="^3.9.2"/>
-  <plugin name="de.appplant.cordova.plugin.email-composer" spec="0.8.2"/>
 </widget>

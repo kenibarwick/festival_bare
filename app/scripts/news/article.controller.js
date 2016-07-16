@@ -8,11 +8,11 @@
 	ArticleController.$inject = 
 		[
 			'$scope', '$stateParams', 'newsService', 
-			'motion', '$ionicPopup', 'userService', '$linq'
+			'motion', '$ionicPopup', 'userService', '$linq', '$cordovaLocalNotification'
 		];
 
 	/* @ngInject */
-	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService, $linq) {
+	function ArticleController($scope, $stateParams, newsService, motion, $ionicPopup, userService, $linq, $cordovaLocalNotification) {
 		var vm = angular.extend(this, {
 			article: null,
 			favourite: favourite,
@@ -50,7 +50,23 @@
 				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
 
+				article.start = new Date(new Date().getTime() + 7*60000);
+
+				var start = new Date(new Date(article.start).getTime() - 5*60000);
+				article.end = start;
+
 				message = 'You will receive a notification when ' + article.name + ' is about to start';
+							
+				var notificationMessage = article.name + ' at the ' + article.location + ' will start in 5 minutes';
+
+				//$cordovaLocalNotification.hasPermission(function (granted) {
+				
+				$cordovaLocalNotification.add({
+			        id: article.id,
+			        title: "Chilled in a Field Reminder",
+			        text: notificationMessage,
+			        at: start
+			    });
 
 				vm.isFavourite = true;
 			}
@@ -63,6 +79,8 @@
 				}
 
 				message = 'The reminder for ' + article.name + ' has been removed';
+
+				$cordovaLocalNotification.cancel(article.id);
 
 				vm.isFavourite = false;
 			}
