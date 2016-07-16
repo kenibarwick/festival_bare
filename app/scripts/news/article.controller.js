@@ -7,7 +7,7 @@
 
 	ArticleController.$inject = 
 		[
-			'$scope', '$stateParams', 'newsService', 
+			'$scope', '$stateParams', 'newsService', 'motion', '$ionicPopup', 'userService', '$linq', '$cordovaLocalNotification' 
 		];
 
 	/* @ngInject */
@@ -49,7 +49,7 @@
 				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
 
-				article.start = new Date(new Date().getTime() + 7*60000);
+				article.start = new Date(new Date().getTime() + 6*60000);
 
 				var start = new Date(new Date(article.start).getTime() - 5*60000);
 				article.end = start;
