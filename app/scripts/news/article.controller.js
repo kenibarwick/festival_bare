@@ -49,17 +49,15 @@
 				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
 
-				article.start = new Date(new Date().getTime() + 7*60000);
+				//article.start = new Date(new Date().getTime() + 7*60000);
 
-				var start = new Date(new Date(article.start).getTime() - 6*60000);
+				var start = new Date(new Date(article.start).getTime() - 15*60000);
 				//var start = new Date(new Date().getTime() - 5000);
-				article.end = start;
+				//article.end = start;
 
 				message = article.name + ' has been added to your favourites list. They thank you :)';
 					
 				var notificationMessage = article.name + ' at the ' + article.location + ' will start in 15 minutes';
-
-
 			      
 			      $cordovaLocalNotification.schedule({
 			        id: article.id,
