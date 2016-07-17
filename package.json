@@ -414,7 +414,11 @@
     "cordova-plugin-device",
     "cordova-plugin-console",
     "cordova-plugin-device",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-network-information",
+    "cordova-plugin-device",
+    "cordova-plugin-device",
+    "cordova-plugin-device"
   ],
   "cordovaPlatforms": []
 }

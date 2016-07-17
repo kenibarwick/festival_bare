@@ -49,23 +49,26 @@
 				var fav = { id : article.id, name : article.name };
 				user.favourites.push( { id : article.id, name : article.name });
 
-				article.start = new Date(new Date().getTime() + 6*60000);
+				article.start = new Date(new Date().getTime() + 7*60000);
 
-				var start = new Date(new Date(article.start).getTime() - 5*60000);
+				var start = new Date(new Date(article.start).getTime() - 6*60000);
+				//var start = new Date(new Date().getTime() - 5000);
 				article.end = start;
 
-				message = 'You will receive a notification when ' + article.name + ' is about to start. They thank you :)';
-							
-				var notificationMessage = article.name + ' at the ' + article.location + ' will start in 5 minutes';
+				message = article.name + ' has been added to your favourites list. They thank you :)';
+					
+				var notificationMessage = article.name + ' at the ' + article.location + ' will start in 15 minutes';
 
-				//$cordovaLocalNotification.hasPermission(function (granted) {
-				
-				$cordovaLocalNotification.add({
+
+			      
+			      $cordovaLocalNotification.schedule({
 			        id: article.id,
-			        title: "Chilled in a Field Reminder",
+			        title: 'Favourite about to start',
 			        text: notificationMessage,
 			        at: start
-			    });
+			      }).then(function (result) {
+			        message = 'You will receive a notification when ' + article.name + ' is about to start. They thank you :)';
+			      });
 
 				vm.isFavourite = true;
 			}
@@ -77,7 +80,6 @@
 					} 
 				}
 
-				// message = 'The reminder for ' + article.name + ' has been removed';
 				message = article.name + " has been removed from your favourite list. What happend? Did they not send you a birthday card?";
 
 				$cordovaLocalNotification.cancel(article.id);

@@ -32,7 +32,6 @@ angular.module('starter', [
 	$ionicPlatform.ready(function() {
 		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
 		// for form inputs)
-
 		$rootScope.uuid = guid();
 
 		if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -42,6 +41,12 @@ angular.module('starter', [
 			// org.apache.cordova.statusbar required
 			StatusBar.styleDefault();
 		}
+
+		$rootScope.$on('$cordovaLocalNotification:click', function(event, notification, state) {
+			console.log('notification id ' + notification.id);
+			window.location.href = '#/app/articles/' + notification.id;
+		});
+
 	});
 })
 
