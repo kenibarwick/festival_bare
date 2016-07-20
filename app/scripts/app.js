@@ -20,7 +20,8 @@ angular.module('starter', [
 	'barebone.sitemap',	
 	'barebone.instagram',
 	'chilled.favourites',
-	'chilled.about',	
+	'chilled.about',
+	'chilled.info',	
 	'gMaps',
 	'ngCordova',
 	'ngCordovaOauth'

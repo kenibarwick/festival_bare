@@ -18,9 +18,9 @@
 			path: 'search',
 			icon: 'ion-music-note'
 		}, {
-			title: 'Instagram',
-			path: 'instagram-login',
-			icon: 'ion-social-instagram'
+			title: 'Information',
+			path: 'info',
+			icon: 'ion-information-circled'
 		}, {
 			title: 'Weekend Programme',
 			path: 'sitemap',
