@@ -69,12 +69,12 @@
   <feature name="InAppBrowser">
     <param name="ios-package" value="CDVInAppBrowser"/>
   </feature>
-   <feature name="NetworkStatus">
-         <param name="ios-package" value="CDVConnection" />
- </feature>
+  <feature name="NetworkStatus">
+    <param name="ios-package" value="CDVConnection"/>
+  </feature>
   <feature name="Device">
-        <param name="ios-package" value="CDVDevice" />
-    </feature>
+    <param name="ios-package" value="CDVDevice"/>
+  </feature>
   <feature name="NetworkStatus">
     <param name="android-package" value="org.apache.cordova.NetworkManager"/>
   </feature>
