@@ -22,9 +22,9 @@
 			path: 'info',
 			icon: 'ion-information-circled'
 		}, {
-			title: 'Weekend Programme',
+			title: 'Sitemap',
 			path: 'sitemap',
-			icon: 'ion-ios-book'
+			icon: 'ion-map'
 		}];
 
 		return data;
