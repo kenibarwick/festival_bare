@@ -27,5 +27,4 @@
 				});
 		});
 		
-		$urlRouterProvider.otherwise("/ciaff");
 })();
