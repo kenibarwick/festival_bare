@@ -17,8 +17,14 @@
 
 	/* @ngInject */
 	function HomeController(
-		menuItems, homeDataService, externalAppsService, $cordovaEmailComposer, $timeout, motion, ionicMaterialMotion) {
-
+								menuItems, 
+								homeDataService, 
+								externalAppsService, 
+								$cordovaEmailComposer, 
+								$timeout, 
+								motion, 
+								ionicMaterialMotion) {
+		
 		var vm = angular.extend(this, {
 			entries: menuItems,
 			phoneNumber: homeDataService.phoneNumber,

@@ -3,7 +3,9 @@
 
 	angular
 		.module('barebone.menu', [
-			'ionic'
+			'ionic',
+			'ngCordova',
+			'barebone.common'
 		])
 		.config(function($stateProvider) {
 			$stateProvider
