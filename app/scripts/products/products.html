@@ -6,9 +6,8 @@
 		</ion-refresher>
 		<ion-list class="animate-fade-slide-in-right">
 			<ion-item
-				class="item-thumbnail-left item-text-wrap ink"
+				class="item-text-wrap ink"
 				ng-repeat="location in vm.products | filter:searchText" ng-click="vm.navigate(location.id)">
-				<img ng-src="{{location.thumb}}">
 				<h2>{{location.name}}</h2>
 				<p>{{location.description}}</p>
 			</ion-item>
