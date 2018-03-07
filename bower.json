@@ -1,6 +1,6 @@
 {
-  "name": "ciaf2016",
-  "version": "1.11.0",
+  "name": "ciaf2018",
+  "version": "1.18.0",
   "dependencies": {
     "ionic": "~1.2.4",
     "angular-websocket": "~1.0.9",
